@@ -1,7 +1,12 @@
 server:
-  port: 8085
+  port: 8081
 
 spring:
+  kafka:
+    bootstrap-servers: localhost:19092,localhost:19094
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/ewm_main

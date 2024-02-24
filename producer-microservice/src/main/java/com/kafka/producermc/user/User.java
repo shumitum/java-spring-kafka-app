@@ -20,6 +20,6 @@ public class User {
     private Long id;
 
     @NotBlank
-    @Column(name = "user_name")
+    @Column(name = "name")
     private String name;
 }
