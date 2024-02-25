@@ -1,7 +1,5 @@
-package com.kafka.producermc.event;
+package com.kafka.consumermc.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.kafka.producermc.util.Utils;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

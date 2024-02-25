@@ -1,7 +1,17 @@
 server:
-  port: 9090
+  port: 9091
+
+application:
+  kafka:
+    user-created-topic: user-created-event-topic
 
 spring:
+  kafka:
+    bootstrap-servers: localhost:19092,localhost:19094
+    consumer:
+      bootstrap-servers: localhost:19092,localhost:19094
+      group-id: unique-group-id
+      client-id: event-consumer
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/ewm_main
@@ -15,3 +25,6 @@ spring:
       hibernate:
         format_sql: true
       database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mvc:
+    format:
+      date-time: yyyy-MM-dd HH:mm:ss
