@@ -13,7 +13,7 @@ public class UserEventLoggingService {
     @KafkaListener(topics = "user-created-event-topic", groupId = "unique-group-id")
     void saveUserEvent(UserCreatedEvent userCreatedEvent) {
         //todo сохранить лог в БД
-        log.info("user created info saved, {}", userCreatedEvent);
+        log.info("user-created-event was saved, {}", userCreatedEvent);
     }
 
     
