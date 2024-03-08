@@ -7,11 +7,15 @@ application:
 
 spring:
   kafka:
-    bootstrap-servers: localhost:19092,localhost:19094
     consumer:
       bootstrap-servers: localhost:19092,localhost:19094
       group-id: unique-group-id
       client-id: event-consumer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: com.kafka.consumermc.model
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/ewm_main
